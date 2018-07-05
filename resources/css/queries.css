@@ -1,0 +1,239 @@
+/* Big tablet to 1200px(widths smaller than the 1140px row) */
+@media only screen and (max-width: 1200px){
+    .row{
+        padding: 0 2%;
+    }
+    .contact-section{
+        padding-top:50px;
+    }
+}
+
+/* small tablet to big tablet: from 768 to 1023px*/
+@media only screen and (max-width: 1023px){
+    html{
+        font-size: 18px;
+    }
+    section {
+        padding: 60px 0;
+    }
+    h1{font-size: 150%;}
+    .welcome-section{ 
+        padding-top: 150px;;
+        height: 40vh;
+        min-height: 500px;
+    }
+    .about-section{
+        width: 85%;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .project-section{
+        padding-top:0;
+      /*  height: 80vh;  original height 80vh */
+        min-height: 750px;
+        max-height: 85vh;
+    }
+    .contact-section{
+        padding-top:0;
+    }
+    .col{
+        margin: 1% 1% 1% 1%;
+    }
+    .span_1_of_4 {
+	    width: 48%; 
+    }
+    .span_1_of_2{
+         width: 48%;
+    }
+    footer .col{
+        margin: 5px auto;
+    }
+}
+
+/* small phones to small tablets: from 481 to 767px*/
+@media only screen and (max-width: 767px){
+   
+    .col{
+        margin: 1% 1% 1% 1%;
+    }
+    .span_1_of_4 {
+	    width: 48%; 
+    }
+    .project-section{
+        padding-top:0;
+      /*  height: 80vh;  original height 80vh */
+        min-height: 950px;
+        max-height: 1200px;
+    }
+    .mobile-nav-icon{
+        display: inline-block;
+    }
+    .nav-list{
+        float: left;
+        display: none;
+    }
+    .nav-list li {
+        display: block;
+        padding-top: 10px;;
+        margin: 0;
+        
+    }
+    .nav-list li a:link,
+    .nav-list li a:visited{
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .sticky .nav-list li {
+        display: block;
+        padding-top: 10px;;
+        margin: 0;  
+    }
+     .sticky .nav-list li:last-child {
+        padding-bottom: 10px;
+    }
+    .sticky .nav-list li a:link,
+    .sticky .nav-list li a:visited{
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .sticky .mobile-nav-icon i {
+        color: #555;
+    }
+    .name, .title{
+        display: none; 
+    }
+    .logo-name-title{
+        width: 80px;
+        height: 55px;
+    }
+    .sticky{
+        
+        height: auto; 
+    }
+    
+     .footer-nav, .social-links{
+        text-align: center;
+        float: none;
+    }
+    .span_2_of_2, .span_1_of_2{
+        text-align: center;
+         width: 100%;
+    }
+    
+}
+
+
+/* small phones from 0 to 480px  iphone 5 resolution*/
+@media only screen and (max-width: 480px){
+    html{
+        font-size: 16px;
+    }
+    h1{
+        font-size: 120%;
+    }
+    .welcome-section{
+        padding-top: 150px;
+        min-height: 650px;
+    }
+    
+    .proj-intro{
+        width: 100%;
+    }
+    .proj-desc{
+        text-align: center;
+    }
+     .project-section{
+        padding-top:0;
+      /*  height: 80vh;  original height 80vh */
+        min-height: 1200px;         
+    }
+    .span_1_of_4 {
+	    width: 98%;
+        text-align: center;
+    }
+   .about-section{
+        width: 100%;
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+    .resume-btn{
+        margin-top: 20px;
+    }
+    .intro, .about-desc{
+        text-align: justify;
+    }
+    form{
+        width:90%;
+        margin: 0 10px;
+    }
+    h3{
+        margin-top: 0;
+        margin-bottom: 10px;
+    }
+    .proj-desc{
+        margin-bottom: 10px;
+    }
+    
+    .footer-nav, .social-links{
+        text-align: center;
+        float: none;
+    }
+    .span_2_of_2, .span_1_of_2{
+       
+        text-align: center;
+    }
+     .mobile-nav-icon{
+        display: inline-block;
+    }
+    .nav-list{
+        float: left;
+        display: none;
+    }
+    .nav-list li {
+        display: block;
+        padding-top: 10px;;
+        margin: 0;
+        
+    }
+    .nav-list li a:link,
+    .nav-list li a:visited{
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .sticky .nav-list li {
+        display: block;
+        padding-top: 10px;;
+        margin: 0;  
+    }
+     .sticky .nav-list li:last-child {
+        padding-bottom: 10px;
+    }
+    .sticky .nav-list li a:link,
+    .sticky .nav-list li a:visited{
+        display: block;
+        border: 0;
+        padding: 0;
+        margin: 0;
+    }
+    .sticky .mobile-nav-icon i {
+        color: #555;
+    }
+    .name, .title{
+        display: none; 
+    }
+    .logo-name-title{
+        width: 80px;
+        height: 55px;
+    }
+    .sticky{
+        
+        height: auto; 
+    }
+}
+
