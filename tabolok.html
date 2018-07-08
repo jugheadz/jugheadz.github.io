@@ -13,11 +13,31 @@
     <link rel="stylesheet" href="vendor/css/3cols.css">
     <link rel="stylesheet" href="vendor/css/2cols.css">
     <link rel="stylesheet" href="resources/css/queries.css">
-    
-    
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>
     
-    <title>Tabolok Webpage</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="/resources/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/resources/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/resources/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/resources/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/resources/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/resources/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/resources/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/resources/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/resources/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="/resources/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="/resources/favicon/favicon-194x194.png" sizes="194x194">
+    <link rel="icon" type="image/png" href="/resources/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="/resources/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="/resources/favicon/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="/resources/favicon/manifest.json">
+    <link rel="mask-icon" href="/resources/favicon/safari-pinned-tab.svg" color="#16a085">
+    <link rel="shortcut icon" href="/resources/favicon/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/resources/favicon/mstile-144x144.png">
+    <meta name="msapplication-config" content="/resources/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#16a085">
+    
+    <title>Nilo Cruz Personal Website</title>
 </head>
 <body>
     <header class="welcome-bg" id="header">
@@ -56,9 +76,9 @@
             <div class="about-section">
                 <h2>About Me</h2>
                 <img src="resources/css/img/jon2.jpg" alt="panda logo" width="100" height="35">
-                <p class="about-desc">Hi there! I'm Nilo Cruz Jr. I have so many nicknames you can call me Jon, tabolok or jugheadz, pick whatever you want. I'm a self proclaimed PC enthusiast, the go-to guy when people are having "computer problems". A movie lover, a gamer and a wannabe bookworm in the making.</p>
-                <p class="about-desc">I'm currently studying how to create responsive websites and mobile apps from the ground up. I enjoy building something using the knowledge that I have learned. I intend to study different web frameworks and other programming languages that I still haven't learn yet.</p>
-                 <p class="about-desc">Perseverance. Hard Work. Passion for programming. Qualities that I am strengthening in order to become a successful programmer.</p>
+                <p class="about-desc">Hi there! I'm Nilo Cruz Jr. I have so many nicknames you can call me Jon, tabolok or jugheadz, pick whatever you want. I'm a self proclaimed PC enthusiast, the go-to guy when people are having "computer problems". A movie lover, a gamer, listens to  any music genre and also a wannabe bookworm in the making.</p>
+                <p class="about-desc">I'm currently learning how to create responsive websites and mobile apps from the ground up. I enjoy building something using the knowledge that I have learned. I intend to study different web frameworks and other programming languages that I still haven't learn yet.</p>
+                 <p class="about-desc">Perseverance. Hard Work. Passion for programming. Some of the qualities that I am strengthening in order to become a successful programmer.</p>
             </div>
         </div>
     </section>
@@ -110,7 +130,9 @@
             <a class="number-btn" href="#"><i class="ion-iphone contact-number-icon"></i>(+63)  915-1997549</a><br>
             </div>  
             <div style="text-align: center">
-            <form action="post" class="contact-form go-bottom">
+            <form method="POST" class="contact-form go-bottom">
+                <div class="form-complete">Message Submitted</div>
+                <div class="form-error"></div>
                 <div>
                 <input id="name" name="name" type="text" required>
                 <label for="name">Your Name</label>
@@ -123,7 +145,7 @@
                 <textarea id="message" name="message" required></textarea>
                 <label for="message">Message</label>
                 </div>
-                <input type="submit" value="Send"> 
+                <input type="button" id="send" value="Send"> 
             </form>
             </div>
         </div>
@@ -146,9 +168,7 @@
                     <li><a href="http://ph.linkedin.com/in/niloccruz"><i class="ion-social-linkedin social-links-icon"></i></a></li>
                     <li><a href="https://github.com/jugheadz"><i class="ion-social-github social-links-icon"></i></a></li>
                     <li><a href="http://www.facebook.com/jugheadz24"><i class="ion-social-facebook social-links-icon"></i></a></li>
-                    <!--
-                    <li><a href="http://steamcommunity.com/id/jugheadz24/"><i class="ion-steam social-links-icon"></i></a></li>
-                    -->
+    
                 </ul>
             </div>
         </div>
@@ -163,5 +183,33 @@
     <script src="js/jquery-2.1.4.js"></script>
     <script src="js/jquery.waypoints.min.js"></script>
     <script src="js/sticky.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            $('#send').click(function(){
+               var name = $('#name').val();
+               var email = $('#email').val();
+                var message = $('#message').val();
+                $.post('mailer.php',{
+                    name: name,
+                    email: email,
+                    message: message},
+                       function(data){
+                  
+                    if (!$.trim(data)){
+                        $('.form-error').hide(500);
+                        $('.form-complete').show(500);
+                    }else{
+                        $('.form-error').html(data);
+                        $('.form-complete').hide(500);
+                        $('.form-error').show(500);
+                    }  
+                                
+                });   
+            });
+        });
+    </script>
+    
+    
 </body>
 </html>
